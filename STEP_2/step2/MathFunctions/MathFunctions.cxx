@@ -9,7 +9,6 @@
 namespace mathfunctions {
 double sqrt(double x)
 {
- 
   #ifdef USE_MYMATH
     return detail::mysqrt(x);
   #else
