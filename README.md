@@ -41,3 +41,10 @@ With these changes, all of our code still requires C++ 11 to build, but it gives
 - Add the Usage Requirements for a library, that allows for far better control over a library or executable's link and include line while also giving more control over the transitive property of targets
 - Set the C++ standard with Interface libraries, using a modern technique to set properties to multiple targets.
 
+<br>
+
+## Step 4
+**Generator expressions** are evaluated during build system generation to produce **information specific** to each **build configuration**. Generator expressions may be used to enable conditional linking, conditional definitions used when compiling, conditional include directories and more. The conditions may be based on the build configuration, target properties, platform information or any other queryable information.
+
+### Goals:
+- Add Compiler warning flags when building but not for installed versions. A common usage of generator expressions is to conditionally add compiler flags, such as those for language levels or warnings. A nice pattern is to associate this information to an INTERFACE target allowing this information to propagate.
