@@ -7,8 +7,8 @@
 #endif
 
 namespace mathfunctions {
-double sqrt(double x)
-{
+double sqrt(double x) {
+
   #ifdef USE_MYMATH
     return detail::mysqrt(x);
   #else

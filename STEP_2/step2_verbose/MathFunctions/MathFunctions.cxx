@@ -9,8 +9,8 @@
 #endif
 
 namespace mathfunctions {
-double sqrt(double x)
-{
+double sqrt(double x) {
+
   // TODO 9: If USE_MYMATH is defined, use detail::mysqrt.
   // Otherwise, use std::sqrt.
   // We use #ifdef because USE_MYMATH is a pre-compiler variable
