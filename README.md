@@ -1,6 +1,6 @@
 # A CMake official tutorial, step by step
 
-This is a collection of all the steps in the official [CMake tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/). Following this tutorial step by step will give you a basic but useful overview of most CMake use cases.
+This is a collection of all the steps in the official [CMake tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/). Following the tutorial step by step will give you a basic but useful overview of most CMake use cases. This repo is only used as a solution archive.
 
 The folders are organized as follows:
 
