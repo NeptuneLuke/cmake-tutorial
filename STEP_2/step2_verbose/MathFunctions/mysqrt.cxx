@@ -6,8 +6,8 @@ namespace mathfunctions {
 namespace detail {
 
 // a hack square root calculation using simple operations
-double mysqrt(double x)
-{
+double mysqrt(double x) {
+
   if (x <= 0) {
     return 0;
   }
