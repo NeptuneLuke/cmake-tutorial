@@ -1,0 +1,10 @@
+// the configured options and settings for Tutorial
+// TODO 10: Define Tutorial_VERSION_MAJOR and Tutorial_VERSION_MINOR
+
+// TutorialConfig.h.in is the input header file to be configured.
+// When configure_file() is called from our CMakeLists.txt, the values
+// for @Tutorial_VERSION_MAJOR@ and @Tutorial_VERSION_MINOR@ will be replaced
+// with the corresponding version numbers from the project in TutorialConfig.h.
+
+#define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
+#define Tutorial_VERSION_MINOR @Tutorial_VERSION_MINOR@
