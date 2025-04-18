@@ -27,8 +27,8 @@ At this point, we have seen how to create a basic project using CMake. In this s
 With these changes, the mysqrt function is now completely optional to whoever is building and using the MathFunctions library. Users can toggle **USE_MYMATH** using the **compiler flag** -DUSE_MYMATH=ON or -DUSE_MYMATH=OFF to manipulate what library is used in the build. Note that the user does not need to set the USE_MYMATH value everytime the project is built.
 
 ### Goals:
-- Add a library.
-- Create an **option** to use (or not use) the library with the value of pre-processor variables.
+- Add a library: rather than placing all of the source files in one directory, we can organize our project with subdirectories (in this case, we will create a subdirectory specifically for our library). Here, we can add a new CMakeLists.txt file and all the source files. In the top level CMakeLists.txt file, we will use the add_subdirectory() command to add the subdirectory to the build.
+- Create an **option** to use (or not use) the library with the value of pre-processor variable USE_MYMATH.
 
 <br>
 
@@ -48,3 +48,28 @@ With these changes, all of our code still requires C++ 11 to build, but it gives
 
 ### Goals:
 - Add Compiler warning flags when building but not for installed versions. A common usage of generator expressions is to conditionally add compiler flags, such as those for language levels or warnings. A nice pattern is to associate this information to an INTERFACE target allowing this information to propagate.
+
+<br>
+
+## Step 5
+Often, it is not enough to only build an executable, it should also be installable. With CMake, we can specify install rules using the install() command. Supporting local installations for your builds in CMake is often as simple as specifying an install location and the targets and files to be installed.
+
+### Goals:
+- Specify install rules for the Tutorial executable and the MathFunctions library.
+- Add testing support with CTest.
+
+### Commands
+To test if everything is alright run the following commands:
+- cd step5_build
+- cmake ../step5
+- cmake --build . --config Release
+- cmake --install . --config Release --prefix "C:/.../STEP_5/folder where you want to install the directories bin - include - lib"
+
+- to make a Debug build just replace **Debug** in the **Release** values
+
+<br>
+
+To use the tests:
+- cd step5_build
+- (Release mode): ctest -C Release
+- (Debug mode): ctest -C Debug -VV
