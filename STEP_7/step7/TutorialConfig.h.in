@@ -1,0 +1,4 @@
+// TutorialConfig.h.in is the input header file to be configured.
+
+#define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
+#define Tutorial_VERSION_MINOR @Tutorial_VERSION_MINOR@

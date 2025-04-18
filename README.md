@@ -102,3 +102,11 @@ Instead, navigate to the build directory and run the command:
 - (Debug mode): ctest [-VV] -C Debug -D Experimental
 
 After that, the ctest will build the project, run the tests, and submit the result to Kitware's public dashboard [https://my.cdash.org/index.php?project=CMakeTutorial](https://my.cdash.org/index.php?project=CMakeTutorial)
+
+<br>
+
+## Step 7
+Now we can add some code that depends on features of the target platform. We will make use of the **check_cxx_compile_source()** command to check if a certain function/library is available for the target system.
+
+### Goals:
+- Change implementation based on system dependencies, using variables HAVE_LOG and HAVE_EXP that are set if check_cxx_compile_source() determines that the C++ source code can be built.
