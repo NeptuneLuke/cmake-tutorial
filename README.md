@@ -73,3 +73,32 @@ To use the tests:
 - cd step5_build
 - (Release mode): ctest -C Release
 - (Debug mode): ctest -C Debug -VV
+
+<br>
+
+## Step 6
+Adding support for submitting our test results to a **dashboard** is simple. We already defined a number of tests for our project in Step 5. Now we just have to run those tests and submit them to **CDash**.
+
+### Goals:
+- Display our CTest results with CDash.
+
+### Additional info
+We will need to acquire a **CTestConfig.cmake** file to be placed in the top-level directory. When run, the ctest executable will read this file to gather information about the testing dashboard. It contains:
+
+- The project name
+- The project "Nightly" start time
+  - The time when a 24 hour "day" starts for this project.
+- The **URL** of the **CDash instance** where the submission's generated documents will be sent
+
+For this tutorial, a **public dashboard server (Kitware dashboard)** is used and its corresponding CTestConfig.cmake file is provided for you in this step's root directory. In practice, this file would be downloaded from a project's Settings page on the CDash instance intended to host the test results. Once downloaded from CDash, the file should not be modified locally.
+
+### Commands
+To create the test dashboard, run the cmake command to configure the project but **do not build it**:
+- cd step5_build
+- cmake ../step5
+
+Instead, navigate to the build directory and run the command:
+- (Release mode): ctest [-VV] -C Release -D Experimental
+- (Debug mode): ctest [-VV] -C Debug -D Experimental
+
+After that, the ctest will build the project, run the tests, and submit the result to Kitware's public dashboard [https://my.cdash.org/index.php?project=CMakeTutorial](https://my.cdash.org/index.php?project=CMakeTutorial)
